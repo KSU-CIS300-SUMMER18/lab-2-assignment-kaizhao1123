@@ -10,11 +10,29 @@ using System.Windows.Forms;
 
 namespace Ksu.Cis300.TextEditor
 {
-    public partial class Form1 : Form
+    public partial class uxTextEditor : Form
     {
-        public Form1()
+        public uxTextEditor()
         {
             InitializeComponent();
+        }
+
+        private void uxOpen_Click(object sender, EventArgs e)
+        {
+            if (uxOpenFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string fn = uxOpenFileDialog.FileName;
+                MessageBox.Show("We can't open" + fn);
+            }
+        }
+
+        private void uxSaveAs_Click(object sender, EventArgs e)
+        {
+            if (uxSaveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string fn = uxSaveFileDialog.FileName;
+                MessageBox.Show("We can't save" + fn);
+            }
         }
     }
 }
